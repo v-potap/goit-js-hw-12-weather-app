@@ -1,0 +1,16 @@
+<section class="forecast is-hidden" id="forecast">
+    <h2>Weather forecast</h2>
+    <ul class="forecast-list">
+        {{#each this}}
+        <li class="forecast-day">
+            <span class="date">{{date}}</span>
+            <img class="icon" src="https:{{day.condition.icon}}" alt="{{day.condition.text}}" />
+            <p> SUN (rise/set) <span data-field="temp">{{astro.sunrise}}/{{astro.sunset}}</span></p>
+            <p>T&#8451; (max/min/ave): <span data-field="temp">{{day.maxtemp_c}}/{{day.mintemp_c}}/{{day.avgtemp_c}} &#8451;</span></p>
+            <p>Humidity (ave): <span data-field="humidity">{{day.avghumidity}} %</span></p>
+            <p>Wind (max): <span data-field="wind">{{day.maxwind_kph}} kph</span></p>
+            <p>Conditions: <span data-field="conditions">{{day.condition.text}}</span></p>
+        </li>
+        {{/each}}
+    </ul>
+</section>
