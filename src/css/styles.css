@@ -18,7 +18,7 @@ img {
   display: block;
   border: 0.25vh solid darkgrey;
   box-shadow: 2vw 2vh 2vw 1vw grey;
-  max-width: 35vw;
+  max-width: 85vw;
   margin: 5vh auto;
   padding: 2vh 2vw;
 }
@@ -70,6 +70,6 @@ img {
 .forecast-day {
   border: 0.1vh solid grey;
   padding: 1vh 1vw;
-  width: 30vh;
+  width: 40vh;
   margin-bottom: 2vh;
 }
