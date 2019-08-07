@@ -1,5 +1,5 @@
-import './template/weather-forecast.hbs';
+import "./template/weather-forecast.hbs";
 
-import './css/styles.css';
+import "./css/styles.css";
 
-import './weather';
+import "./weather";

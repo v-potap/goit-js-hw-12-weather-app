@@ -1,6 +1,6 @@
 export default class WeatherService {
   constructor({
-    dBase = "http://api.apixu.com/v1",
+    dBase = "https://api.apixu.com/v1",
     dKey = "86c35fa65a404206876174320190508",
     location = "Kiev"
   }) {

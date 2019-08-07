@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/v-potap/goit-js-hw-10-food-service.git"
+    "url": "git+https://github.com/v-potap/goit-js-hw-12-weather-app.git"
   },
   "keywords": [],
   "author": "v-potap <vlarus@ukr.net>",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://github.com/v-potap/goit-js-hw-10-food-service",
+  "homepage": "https://github.com/v-potap/goit-js-hw-12-weather-app",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -30,7 +30,7 @@
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "2.0.1",
     "handlebars-loader": "^1.7.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
