@@ -73,9 +73,28 @@ function handleCitySubmit(e) {
         currentWeather.setLocation(
           `${location.coords.latitude} ${location.coords.longitude}`
         );
+        currentWeather
+          .get()
+          .then(response =>
+            applyWeatherCurrent(response.location, response.current)
+          )
+          .catch(error =>
+            alert(
+              `Location "${userLocation}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "Current Weather" is unavailable.`
+            )
+          );
+
         forecastWeather.setLocation(
           `${location.coords.latitude} ${location.coords.longitude}`
         );
+        forecastWeather
+          .get()
+          .then(response => applyWeatherForecast(response.forecast.forecastday))
+          .catch(error =>
+            alert(
+              `Location "${userLocation}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "Weather Forecast" is unavailable.`
+            )
+          );
       })
       .catch(error => {
         userLocation = "UNDEFINED";
@@ -83,28 +102,8 @@ function handleCitySubmit(e) {
 
     console.log(currentWeather.getLocation());
     console.log(forecastWeather.getLocation());
-
-    currentWeather
-      .get()
-      .then(response =>
-        applyWeatherCurrent(response.location, response.current)
-      )
-      .catch(error =>
-        alert(
-          `Location "${userLocation}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "Current Weather" is unavailable.`
-        )
-      );
-
-    forecastWeather
-      .get()
-      .then(response => applyWeatherForecast(response.forecast.forecastday))
-      .catch(error =>
-        alert(
-          `Location "${userLocation}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "Weather Forecast" is unavailable.`
-        )
-      );
   }
-  
+
   for (const entry of Object.entries(domRefs.form)) {
     entry.disabled = false;
   }
