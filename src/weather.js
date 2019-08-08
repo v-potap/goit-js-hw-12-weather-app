@@ -1,6 +1,7 @@
 import CurrentWeatherService from "./weather-current";
 import ForecastWeatherService from "./weather-forecast";
 import weatherForecastTemplate from "./template/weather-forecast.hbs";
+import PNotify from "../node_modules/pnotify/dist/es/PNotify.js";
 
 const domRefs = {
   form: {
@@ -39,9 +40,13 @@ function handleCitySubmit(e) {
         applyWeatherCurrent(response.location, response.current)
       )
       .catch(error =>
-        alert(
-          `Location "${userLocation}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "Current Weather" is unavailable.`
-        )
+        PNotify.alert({
+          title: "CURRENT WEATHER",
+          text: `Location "${currentWeather.getLocation()}"\ndoes not recogized by ${currentWeather.getBase()}\nor service "CURRENT WEATHER" is unavailable.`,
+          icon: true,
+          animation: "fade",
+          delay: 7000,
+        })
       );
 
     forecastWeather.setLocation(domRefs.form.input.value);
@@ -49,9 +54,13 @@ function handleCitySubmit(e) {
       .get()
       .then(response => applyWeatherForecast(response.forecast.forecastday))
       .catch(error =>
-        alert(
-          `Location "${userLocation}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "Weather Forecast" is unavailable.`
-        )
+        PNotify.alert({
+          title: "WEATHER FORECAST",
+          text: `Location "${forecastWeather.getLocation()}"\ndoes not recogized by ${forecastWeather.getBase()}\nor service "WEATHER FORECAST" is unavailable.`,
+          icon: true,
+          animation: "fade",
+          delay: 7000,
+        })
       );
 
     domRefs.form._self.reset();
